@@ -75,6 +75,7 @@ def vending_machine(conn, run, reciept):
         # Ask the user if they want to continue adding more items
         add_item = str(input("Enter q to quit or any other key to add more items: "))
         if add_item == "q":
+            print("Your remaining change is $%.2f" % val)
             run = False
 
 def create_reciept(conn, reciept):
@@ -110,7 +111,7 @@ def popular_candy(conn):
     rows = cur.fetchall()
     wrapperColor = rows[0][0]
 
-    print("\nThe more popular candy is {} with {} {} wrappers".format(maxName, maxNum, wrapperColor))
+    print("\nThe more popular candy is {} with {} {} wrappers in the trash compartment".format(maxName, maxNum, wrapperColor))
 
 def main():
     run = True
